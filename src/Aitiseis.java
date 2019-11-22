@@ -18,12 +18,10 @@ public class Aitiseis {
     }
  
     public String CreateNewAitisi(){
-        int year=Calendar.getInstance().get(Calendar.YEAR);
-        String bebaiosi="<html>Βεβαίωση Σπουδών<br><br>"
-                        +"Βεβαιώνεται ότι, όπως προκύπτι απο τα στοιχεία του Τμήματος,  η/ο "+surname+" "+name
+        String bebaiosi= "Βεβαιώνεται ότι, όπως προκύπτι απο τα στοιχεία του Τμήματος,  η/ο "+surname+" "+name
                         +" είναι φοιήτρια του ΤΜΗΜΑΤΟΣ ΜΗΧΑΝΙΚΩΝ ΠΛΗΡΟΦΟΡΙΚΗΣ Τ.Ε. της ΣΧΟΛΗΣ "
                         +"ΤΕΧΝΟΛΟΓΩΝ ΕΦΑΡΜΟΓΩΝ του ΔΙΕΘΝΕΣ ΠΑΝΕΠΙΣΤΙΜΙΟΥ ΕΛΛΑΔΟΥΣ στο "+exam
-                        +" τυπικό εξάμηνο σπουδών του ακαδημαικού έτους "+year+"-"+(year-1)+"</html>\n";
+                        +" τυπικό εξάμηνο σπουδών του<br>"+email+"</html>\n";
         return bebaiosi;
 
     }
