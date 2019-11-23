@@ -165,15 +165,17 @@ public class LoginUI extends javax.swing.JFrame {
         Vathmologies = new javax.swing.JDialog();
         jPanel18 = new javax.swing.JPanel();
         jButton24 = new javax.swing.JButton();
-        jLabel15 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         EpeksergasiaVathmologies = new javax.swing.JDialog();
         jPanel19 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         VathmologiesPianakasMathimaton = new javax.swing.JList();
-        gradeNum = new javax.swing.JComboBox<String>();
         jButton22 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
+        gradeNum = new javax.swing.JSpinner();
+        jLabel15 = new javax.swing.JLabel();
         Dilwseis = new javax.swing.JDialog();
         jPanel10 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -961,6 +963,7 @@ public class LoginUI extends javax.swing.JFrame {
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel26.setText("ID:");
 
+        gid.setEditable(false);
         gid.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         gname.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -1277,7 +1280,7 @@ public class LoginUI extends javax.swing.JFrame {
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton11))))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1311,6 +1314,24 @@ public class LoginUI extends javax.swing.JFrame {
             }
         });
 
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "TITLE", "EXAM", "GRADE"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(jTable2);
+
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
@@ -1321,18 +1342,18 @@ public class LoginUI extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jButton24))
                     .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(74, Short.MAX_VALUE))
+                        .addGap(21, 21, 21)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(89, 89, 89)
                 .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout VathmologiesLayout = new javax.swing.GroupLayout(Vathmologies.getContentPane());
@@ -1350,8 +1371,6 @@ public class LoginUI extends javax.swing.JFrame {
 
         jScrollPane5.setViewportView(VathmologiesPianakasMathimaton);
 
-        gradeNum.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
-
         jButton22.setText("Αποθηκευση");
         jButton22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1366,7 +1385,12 @@ public class LoginUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel36.setText("jLabel36");
+        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel36.setText("GRADE");
+
+        gradeNum.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10, 1));
+
+        jLabel15.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -1375,19 +1399,24 @@ public class LoginUI extends javax.swing.JFrame {
             .addGroup(jPanel19Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addComponent(gradeNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                        .addComponent(jButton22))
-                    .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addComponent(jLabel36)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel19Layout.createSequentialGroup()
+                                .addGap(55, 55, 55)
+                                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel36)
+                                    .addComponent(gradeNum, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel19Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(43, Short.MAX_VALUE))))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1395,14 +1424,18 @@ public class LoginUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
                         .addComponent(jLabel36)
-                        .addGap(17, 17, 17)
-                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(gradeNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton22))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton23))
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(gradeNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(jButton22)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton23)
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -1426,11 +1459,11 @@ public class LoginUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Μαθημάτα", ""
+                "Μαθημάτα"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
+                java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1455,11 +1488,11 @@ public class LoginUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Προσθέστε:", ""
+                "Προσθέστε:"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
+                java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1511,9 +1544,6 @@ public class LoginUI extends javax.swing.JFrame {
                         .addGap(255, 255, 255)
                         .addComponent(jLabel3))
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(errorDil, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addGap(132, 132, 132)
@@ -1531,7 +1561,10 @@ public class LoginUI extends javax.swing.JFrame {
                                 .addGap(45, 45, 45)
                                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(p, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(p1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(p1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(193, 193, 193)
+                        .addComponent(errorDil, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
@@ -1551,9 +1584,9 @@ public class LoginUI extends javax.swing.JFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ipoboliB, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EpistrofhDilwseis, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addComponent(errorDil)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
 
         javax.swing.GroupLayout DilwseisLayout = new javax.swing.GroupLayout(Dilwseis.getContentPane());
@@ -1691,6 +1724,7 @@ public class LoginUI extends javax.swing.JFrame {
         LoginButton.setBackground(new java.awt.Color(153, 204, 255));
         LoginButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         LoginButton.setText("Εισοδος");
+        LoginButton.setAutoscrolls(true);
         LoginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoginButtonActionPerformed(evt);
@@ -1817,23 +1851,24 @@ public class LoginUI extends javax.swing.JFrame {
     }//GEN-LAST:event_StoixiafoititiActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       
         try {
             Vathmologies.setVisible(true);
             Vathmologies.setSize(450,400);
             StudentHomeUI.setVisible(false);
-            Scanner sc = new Scanner(new File(obj.getId()+"_courses.txt"));
-            String k="";
-            while (sc.hasNextLine()) {
-                String[] str = sc.nextLine().split("@");
-                
-                k=k+"\n"+"Μάθημα:  "+str[1]+"     Βαθμός:  " +str[3]+"\n" ;
-                
-                
+            
+            line="SELECT D.cID,C.TITLE,C.CEXAM,D.grade FROM dilwseis as D INNER JOIN courses_table C ON D.cID=C.CID";
+            rs=st.executeQuery(line);
+            DefaultTableModel modelAitisi = (DefaultTableModel) jTable2.getModel();
+
+            while(rs.next()){
+                modelAitisi.addRow(new String[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4)});
             }
-            jLabel15.setText(k);
-        } catch (FileNotFoundException ex) {
+            jTable2.setModel(modelAitisi);
+        } catch (SQLException ex) {
             Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
         }
+  
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
@@ -1997,25 +2032,50 @@ public class LoginUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        Gramatia.setVisible(false);
-        EisagosiStudent.setVisible(true);
-        EisagosiStudent.setSize(342,368);
+        try {
+            Gramatia.setVisible(false);
+            EisagosiStudent.setVisible(true);
+            EisagosiStudent.setSize(342,368);
+            
+            line="SELECT MAX(ID) FROM users";
+            rs=st.executeQuery(line);
+            rs.next();
+            int i=Integer.parseInt(rs.getString(1));
+            i+=1;
+            String show="0";
+            
+            if((i+10000)>=100000){
+                show=i+"";
+            }else if((i+10000)<=19999){
+                show="0"+i;
+            }else if((i+10000)<=10999){
+                show="00"+i+"";
+            }else if((i+10000)<=10099){
+                show="000"+i+"";
+            }else if((i+10000)<=10009){
+                show="0000"+i+"";
+            }
+            gid.setText(show);
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         if(gid.getText().equals("") || gname.getText().equals("") || gsurname.getText().equals("") ||gexam.getText().equals("") || gusername.getText().equals("") || gpassword.getText().equals("")){
             gerror.setText("Fields can't be empty");
         }else{
+            line="INSERT INTO `users`(`ID`, `Name`, `surname`, `exam`, `username`, `password`) VALUES ('"+gid.getText()+"','"+gname.getText()+"','"+gsurname.getText()+"','"+gexam.getText()+"','"+gusername.getText()+"','"+gpassword.getText()+"')";
+           
             try {
-                FileWriter fw=new FileWriter(filename,true);
-                String str=gid.getText()+"@"+gname.getText()+"@"+gsurname.getText()+"@"+gexam.getText()+"@"+gusername.getText()+"@"+gpassword.getText()+"\n";
-                fw.write(str);
-                fw.close();
-                Gramatia.setVisible(true);
-                EisagosiStudent.setVisible(false);
-            } catch (IOException ex) {
+                st.executeUpdate(line);
+            } catch (SQLException ex) {
                 Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
+            Gramatia.setVisible(true);
+            EisagosiStudent.setVisible(false);
         
         }
     }//GEN-LAST:event_jButton18ActionPerformed
@@ -2026,24 +2086,26 @@ public class LoginUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        try {
             Epe3ergasia1.setVisible(true);
             Epe3ergasia1.setSize(400, 400);
             Gramatia.setVisible(false);
-            File file = new File(filename);
             DefaultTableModel table = (DefaultTableModel) Studenttable.getModel();
-
-            Studenttable.setDefaultEditor(Object.class, null);
-            Scanner sc = new Scanner(file);
-            while (sc.hasNextLine()) {
-                String[] str = sc.nextLine().split("@");
-                 table.addRow(new Object[]{str[0],str[1],str[2]});
-
-                
-            }
-        } catch (FileNotFoundException ex) {
+            table.setRowCount(0);
+        try {
+        
+            line="Select ID,Name,surname FROM users";
+            rs=st.executeQuery(line);
+            while(rs.next()){
+                table.addRow(new Object[]{rs.getString(1),rs.getString(2),rs.getString(3)});                
+           }
+            Studenttable.setModel(table);
+        } catch (SQLException ex) {
             Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
         }
+         
+                
+            
+      
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
@@ -2051,28 +2113,15 @@ public class LoginUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-         try {
-                Clone(filename);
-                FileWriter fw = new FileWriter(new File(filename));
-                BufferedReader br=new BufferedReader(new FileReader(tempfilename));
-                String line;
-                while ((line = br.readLine()) != null) {
-               //     Account temp = temp(line);
-                    if (true) {
-                        String newobj = eid.getText() + "@" + ename.getText() + "@" + eusername.getText()  + "@" + eexam.getText()  + "@" + eusername.getText()  + "@" + epassword.getText() + "\n";
-                        fw.write(newobj);
-                    } else {
-                        fw.write(line+"\n");
-
-
-                    }
-                    
-                    
-                }
-                br.close();
-                fw.close();
-            } catch (IOException ex) {
-            }
+        try {
+            line="UPDATE `users` SET Name='"+ename.getText()+"',`surname`='"+esurname.getText()+"',`exam`='"+eexam.getText()+"',`username`='"+eusername.getText()+"',`password`='"+epassword.getText()+"' WHERE ID="+eid.getText();
+            st.executeUpdate(line);
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Epe3ergasia2.setVisible(false);
+        Epe3ergasia2.setSize(484,379);
+        Epe3ergasia1.setVisible(true);
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void StudenttableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StudenttableMouseClicked
@@ -2080,29 +2129,24 @@ public class LoginUI extends javax.swing.JFrame {
             Epe3ergasia2.setVisible(true);
             Epe3ergasia2.setSize(500,500);
             int i=Studenttable.getSelectedRow();
-           
-            File file = new File(filename);
-            try {
-                Scanner sc = new Scanner(file);
-                String line;
-                int j=0;
-                while ((line=sc.nextLine())!=null) {
-                    String[] str =line.split("@");
-                        if(j==i){
-                            eid.setText(str[0]);
-                            ename.setText(str[1]);
-                            esurname.setText(str[2]);
-                            eexam.setText(str[3]);
-                            eusername.setText(str[4]);
-                            epassword.setText(str[5]);
-                            break;
-                        }
-                j++;
-                 }
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            String id=(String)Studenttable.getValueAt(i, 0);
             
+        try {
+       
+            line="SELECT * FROM users WHERE ID="+id;
+            rs=st.executeQuery(line);
+            while(rs.next()){
+                eid.setText(rs.getString(1));
+                ename.setText(rs.getString(2));
+                esurname.setText(rs.getString(3));
+                eexam.setText(rs.getString(4));
+                eusername.setText(rs.getString(5));
+                epassword.setText(rs.getString(6));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
     }//GEN-LAST:event_StudenttableMouseClicked
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -2116,7 +2160,7 @@ public class LoginUI extends javax.swing.JFrame {
             line="SELECT * FROM courses_table";
             rs=st.executeQuery(line);
             while(rs.next()){
-                 table.addRow(new Object[]{rs.getString(1),rs.getString(2)});
+                 table.addRow(new Object[]{rs.getString(1)+" "+rs.getString(2)});
             }
             table10.setModel(table);
         } catch (SQLException ex) {
@@ -2126,16 +2170,31 @@ public class LoginUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
-        // TODO add your handling code here:
         Vathmologies.setVisible(false);
 
-        Gramatia.setVisible(true);
-
+        StudentHomeUI.setVisible(true);
+        StudentHomeUI.setSize(500, 500);
     }//GEN-LAST:event_jButton24ActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+            try {
+                if(VathmologiesPianakasMathimaton.getSelectedIndex()==-1){
+                    throw new MyExceptionNotSelected("You didn't select course");
+                }
+                String[] cid=VathmologiesPianakasMathimaton.getSelectedValue().split(" ");
+                System.out.println(VathmologiesPianakasMathimaton.getSelectedValue());
+                String uid=(String)Studenttable1.getValueAt(Studenttable1.getSelectedRow(), 0);
+               // UPDATE `dilwseis` SET `grade`='8' WHERE uID=09213 AND cID=434
 
-             
+                line="UPDATE `dilwseis` SET grade='"+ gradeNum.getValue()+"' WHERE cID="+cid[0]+" AND uID="+uid;
+        
+                st.executeUpdate(line);
+            } catch (SQLException ex) {
+                Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (MyExceptionNotSelected ex) {
+                jLabel15.setText(ex.getMessage());
+            }
+        
 
     }//GEN-LAST:event_jButton22ActionPerformed
 
@@ -2145,26 +2204,24 @@ public class LoginUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton23ActionPerformed
 
     private void table10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table10MouseClicked
-        try {
-            String fid=String.valueOf(table10.getValueAt(table10.getSelectedRow(), 1));
-            System.out.println(fid);
-            DefaultTableModel modeltable11 = (DefaultTableModel) table11.getModel();
-            line="SELECT * FROM courses_table WHERE CID="+fid;
-            rs=st.executeQuery(line);
-            
-            while(rs.next()){
-                modeltable11.addRow(new String []{rs.getString(1),rs.getString(2)});
+        String fid=String.valueOf(table10.getValueAt(table10.getSelectedRow(), table10.getSelectedColumn()));
+        DefaultTableModel modeltable11 = (DefaultTableModel) table11.getModel();
+        int rows=modeltable11.getRowCount();
+        int i=0;
+        boolean contition=true;
+        while(i<rows){
+            if(modeltable11.getValueAt(i, 0).equals(fid)){
+               errorDil.setText("You can't select an already selected course!");
+               contition=false;
             }
-            table11.setModel(modeltable11);
-            /*if(existsInTable(table11,h)){
-            //            modeltable11.addRow(new Object[]{listodcourses[index].id+"  "+listodcourses[index].name+"  "+listodcourses[index].getExam()});
-            errorDil.setText("");
-            }else{
-            errorDil.setText("Δεν μπορείτε να προσθέσετε το ίδιο μάθημα δυο φορές");
-            }*/
-        } catch (SQLException ex) {
-            Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
+            i++;
         }
+        if(contition){
+            modeltable11.addRow(new String []{fid});
+            errorDil.setText("");
+        }
+        
+        table11.setModel(modeltable11);
     }//GEN-LAST:event_table10MouseClicked
     public boolean existsInTable(JTable table, String s) {
 
@@ -2178,34 +2235,30 @@ public class LoginUI extends javax.swing.JFrame {
     private void table11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table11MouseClicked
         int index=table11.getSelectedRow();
         DefaultTableModel modeltable11 = (DefaultTableModel) table11.getModel();
-        table11.setDefaultEditor(Object.class, null);
         modeltable11.removeRow(index);
+        table11.setModel(modeltable11);
         
     }//GEN-LAST:event_table11MouseClicked
 
     private void ipoboliBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ipoboliBActionPerformed
-        FileWriter fw=null;
         try {
-            File courses=new File(obj.getId()+"_courses.txt");
-            fw = new FileWriter(courses.getAbsolutePath());
             for(int i=0;i<table11.getRowCount();i++){
-                String array[]=(table11.getValueAt(i, 0)).toString().split("  ");
-              
-                fw.write(array[0]+"@"+array[1]+"@"+array[2]+"@"+"null"+"\n");
+           
+                    String array[]=(table11.getValueAt(i, 0)).toString().split(" ");
+                    System.out.println(array[0]);
+                    line="INSERT INTO dilwseis(uID,cID) VALUES  ('"+obj.getId()+"','"+array[0]+"')";
+                    st.executeUpdate(line);
+                
             }
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
+        }   
+        
             JOptionPane.showMessageDialog(null, "Η Δηλωσεις σας αποθηκεύτηκε με επιτυχία");
             Dilwseis.setVisible(false);
             StudentHomeUI.setVisible(true);
             
-        } catch (IOException ex) {
-            Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                fw.close();
-            } catch (IOException ex) {
-                Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+       
     }//GEN-LAST:event_ipoboliBActionPerformed
 
     private void EpistrofhDilwseisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EpistrofhDilwseisActionPerformed
@@ -2266,62 +2319,43 @@ public class LoginUI extends javax.swing.JFrame {
             Epe3ergasia3.setVisible(true);
             Epe3ergasia3.setSize(450, 400);
             Gramatia.setVisible(false);
-             try {
-           
-            File file = new File(filename);
             DefaultTableModel table = (DefaultTableModel) Studenttable1.getModel();
-
-            Studenttable1.setDefaultEditor(Object.class, null);
-            Scanner sc = new Scanner(file);
-            while (sc.hasNextLine()) {
-                String[] str = sc.nextLine().split("@");
-                 table.addRow(new Object[]{str[0],str[1],str[2]});
-
-                
-            }
-            } catch (FileNotFoundException ex) {
+            table.setRowCount(0);
+        try {
+        
+            line="Select ID,Name,surname FROM users";
+            rs=st.executeQuery(line);
+            while(rs.next()){
+                table.addRow(new Object[]{rs.getString(1),rs.getString(2),rs.getString(3)});                
+           }
+            Studenttable1.setModel(table);
+        } catch (SQLException ex) {
             Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        }
 
 
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void Studenttable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Studenttable1MouseClicked
-        EpeksergasiaVathmologies.setVisible(true);
-        EpeksergasiaVathmologies.setSize(450,400);
-        Epe3ergasia3.setVisible(false);
+        
+            EpeksergasiaVathmologies.setVisible(true);
+            EpeksergasiaVathmologies.setSize(450,400);
+            Epe3ergasia3.setVisible(false);
+            
+            DefaultListModel list = new DefaultListModel();
 
-        int i=Studenttable1.getSelectedRow();
-        Scanner sc = new Scanner(filename);
-        String line;
-        int j=0;
-        while ((line=sc.nextLine())!=null) {
-            String[] str =line.split("@");
-            if(j==i){
-//                idapoGrammatia=Integer.parseInt(str[0]);
-                break;
+            list.clear();
+            line="SELECT C.CID,C.TITLE FROM users as U INNER JOIN dilwseis as D ON (U.ID=D.uID) INNER JOIN courses_table as C ON (D.cID=C.CID) WHERE U.ID="+Studenttable1.getValueAt(Studenttable1.getSelectedRow(), 0);
+        try {
+            rs=st.executeQuery(line);
+            while(rs.next()){
+                list.addElement(rs.getString(1)+" "+rs.getString(2));
+                
             }
-            j++;
+            VathmologiesPianakasMathimaton.setModel(list);
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
         }
-        sc.close();
-   
-
-        /*DefaultTableModel table = (DefaultTableModel) GradeTable.getModel();
-        
-        GradeTable.setDefaultEditor(Object.class, null);
-        Scanner rsc = new Scanner();
-        
-        if (table.getRowCount() > 0) {
-        while (table.getRowCount() > 0) {
-        table.removeRow(0);
-        }
-        }
-        
-        while (sc.hasNextLine()) {
-        String[] str = sc.nextLine().split("@");
-        table.addRow(new Object[]{str[0], str[1], str[2]});
-        
-        }            }*/
     }//GEN-LAST:event_Studenttable1MouseClicked
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
@@ -2343,28 +2377,33 @@ public class LoginUI extends javax.swing.JFrame {
     }
 
     private void login() {
-        
-        try {
-            line="SELECT  ID,Name,surname,exam,username,password FROM users";
-            rs=st.executeQuery(line);
-            
-            String t_username;
-            String t_password;
-            
-            while (rs.next()){
-                t_username=rs.getString(5);
-                t_password=rs.getString(6);
-                
-                if(t_username.equals(Username.getText()) && t_password.equals(Password.getText()) ){
-                    obj = new Account(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4).charAt(0),rs.getString(5),rs.getString(6));
-                    StudentHomeUI.setVisible(true);
-                    this.setVisible(false);
-                    break;
+        if("admin".equals(Username.getText()) && "admin".equals(Password.getText()) ){
+            this.setVisible(false);
+            Gramatia.setVisible(true);
+            Gramatia.setSize(400, 400);
+        }else{
+            try {
+                line="SELECT  ID,Name,surname,exam,username,password FROM users";
+                rs=st.executeQuery(line);
+
+                String t_username;
+                String t_password;
+
+                while (rs.next()){
+                    t_username=rs.getString(5);
+                    t_password=rs.getString(6);
+
+                    if(t_username.equals(Username.getText()) && t_password.equals(Password.getText()) ){
+                        obj = new Account(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4).charAt(0),rs.getString(5),rs.getString(6));
+                        StudentHomeUI.setVisible(true);
+                        this.setVisible(false);
+                        break;
+                    }
                 }
+                errormsg1.setText("Wrong Username or Password");
+            } catch (SQLException ex) {
+                Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
             }
-            errormsg1.setText("Wrong Username or Password");
-        } catch (SQLException ex) {
-            Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -2465,7 +2504,7 @@ public class LoginUI extends javax.swing.JFrame {
     private javax.swing.JTextField gid;
     private javax.swing.JTextField gname;
     private javax.swing.JTextField gpassword;
-    private javax.swing.JComboBox<String> gradeNum;
+    private javax.swing.JSpinner gradeNum;
     private javax.swing.JTextField gsurname;
     private javax.swing.JTextField gusername;
     private javax.swing.JButton ipoboliB;
@@ -2553,11 +2592,13 @@ public class LoginUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JButton newaitisi;
     private javax.swing.JLabel p;
     private javax.swing.JLabel p1;
